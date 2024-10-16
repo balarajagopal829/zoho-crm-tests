@@ -1,0 +1,1689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.7 on win32)" generated="2024-10-16T14:22:45.693807" rpa="false" schemaversion="5">
+<suite id="s1" name="Crm Test" source="C:\Assesment\crm_test.robot">
+<kw name="Open Zoho CRM And Login" owner="common_resource" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:22:46.269318" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+<msg time="2024-10-16T14:22:46.270318" level="INFO">Opening browser 'chrome' to base url 'https://www.zoho.com/en-in/crm/'.</msg>
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<arg>executable_path=${dirver_path}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-16T14:22:46.269318" elapsed="38.913142"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-10-16T14:23:25.183469" elapsed="0.237805"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[contains(@class, "zgh-login") and text()="Sign In"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:23:25.421274" elapsed="0.114998"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:23:25.537271" level="INFO">Clicking element '//*[contains(@class, "zgh-login") and text()="Sign In"]'.</msg>
+<arg>//*[contains(@class, "zgh-login") and text()="Sign In"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:23:25.537271" elapsed="4.743737"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="login_id"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:23:30.282007" elapsed="1.174375"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:23:31.457384" level="INFO">Typing text 'consumerauthtenant@gmail.com' into text field '//*[@id="login_id"]'.</msg>
+<arg>//*[@id="login_id"]</arg>
+<arg>${email_id}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:23:31.456382" elapsed="0.174010"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:23:31.630392" level="INFO">Clicking button '//*[@id="nextbtn"]'.</msg>
+<arg>//*[@id="nextbtn"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:23:31.630392" elapsed="0.079991"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="password"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:23:31.710383" elapsed="0.254540"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:23:31.965923" level="INFO">Typing password into text field '//*[@id="password"]'.</msg>
+<msg time="2024-10-16T14:23:32.051439" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>//*[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:23:31.965923" elapsed="0.155033"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:23:32.120956" level="INFO">Clicking button '//*[@id="nextbtn"]'.</msg>
+<arg>//*[@id="nextbtn"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:23:32.120956" elapsed="0.084006"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>//*[@id="show-uName"]</arg>
+<arg>Welcome</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2024-10-16T14:23:32.204962" elapsed="27.881711"/>
+</kw>
+<doc>This keyword automates the process of logging into Zoho CRM.</doc>
+<status status="PASS" start="2024-10-16T14:22:46.268318" elapsed="73.818355"/>
+</kw>
+<test id="s1-t1" name="Verify Lead Creation with Only Mandatory Fields" line="11">
+<kw name="Navigate To Module" owner="crom_resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:00.089673" elapsed="0.026002"/>
+</kw>
+<msg time="2024-10-16T14:24:00.115675" level="INFO">${leave_page_button} = True</msg>
+<var>${leave_page_button}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-16T14:24:00.088673" elapsed="0.027002"/>
+</kw>
+<if>
+<branch type="IF" condition="'${leave_page_button}' == 'False'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:00.115675" elapsed="0.001002"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:00.115675" elapsed="0.001002"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:00.115675" elapsed="0.001002"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:00.116677" level="INFO">Clicking element '//*[@id="Visible_Leads"]'.</msg>
+<arg>${module_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:00.116677" elapsed="0.227021"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@aria-label="Create Lead"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:00.343698" elapsed="5.052285"/>
+</kw>
+<arg>${leads_module_locator}</arg>
+<arg>${leads_module}</arg>
+<doc>This keyword navigates to the specified module in Zoho CRM and handles any leave-page confirmations.</doc>
+<status status="PASS" start="2024-10-16T14:24:00.088673" elapsed="5.307310"/>
+</kw>
+<kw name="Click Create New Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:05.396984" level="INFO">Clicking element '//*[@aria-label="Create Lead"]'.</msg>
+<arg>//*[@aria-label="Create Lead"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:05.396984" elapsed="0.258523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="heading_title"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:05.656509" elapsed="5.037756"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:10.724256" level="INFO">Element '//*[@id="heading_title"]' contains text 'Create Lead'.</msg>
+<arg>//*[@id="heading_title"]</arg>
+<arg>Create Lead</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T14:24:10.694265" elapsed="0.029991"/>
+</kw>
+<doc>Clicks the "Create Lead" button and ensures the "Create Lead" form is loaded.</doc>
+<status status="PASS" start="2024-10-16T14:24:05.396984" elapsed="5.327272"/>
+</kw>
+<kw name="Input Lead Information" owner="crom_resource">
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:10.726230" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:10.726230" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:10.726230" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:10.727242" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:10.726230" elapsed="0.001012"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:10.726230" elapsed="0.001012"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:10.727242" elapsed="0.039994"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:10.727242" elapsed="0.039994"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:10.727242" elapsed="0.039994"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:10.770243" level="INFO">Typing text 'pallettest' into text field '//input[@type='text' and @maxlength='200']'.</msg>
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<arg>${company}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:10.768236" elapsed="0.287901"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:10.767236" elapsed="0.288901"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:10.767236" elapsed="0.288901"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:11.057137" elapsed="0.034991"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:11.056137" elapsed="0.035991"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.056137" elapsed="0.035991"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:11.093128" level="INFO">Typing text 'test' into text field '//*[@id="Crm_Leads_LASTNAME_LInput"]'.</msg>
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:11.093128" elapsed="0.209725"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:11.092128" elapsed="0.211756"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.092128" elapsed="0.211756"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:11.303884" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:11.303884" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.303884" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:11.304850" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:11.303884" elapsed="0.000966"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.303884" elapsed="0.000966"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:11.304850" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:11.304850" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.304850" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:11.304850" elapsed="0.000998"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:11.304850" elapsed="0.000998"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.304850" elapsed="0.000998"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:11.305848" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:11.305848" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.305848" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<arg>${designation}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:11.305848" elapsed="0.001036"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:11.305848" elapsed="0.001036"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.305848" elapsed="0.001036"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:11.306884" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:11.306884" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.306884" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>${LEAD_SOURCE_DROPDOWN}</arg>
+<arg>${leadsource}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:11.306884" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:11.306884" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:11.306884" elapsed="0.001003"/>
+</if>
+<arg>lastname=${last_name}</arg>
+<arg>company=${company_name}</arg>
+<doc>Fills in the lead information on the Create Lead form, including optional and mandatory fields.</doc>
+<status status="PASS" start="2024-10-16T14:24:10.725230" elapsed="0.582657"/>
+</kw>
+<kw name="Save Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:11.308849" level="INFO">Clicking element '//*[@id="crm_create_savebutn"]'.</msg>
+<arg>//*[@id="crm_create_savebutn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:11.307887" elapsed="0.118929"/>
+</kw>
+<doc>Saves the lead by clicking the Save button on the Create Lead form.</doc>
+<status status="PASS" start="2024-10-16T14:24:11.307887" elapsed="0.118929"/>
+</kw>
+<kw name="Verify Lead Creation Is Successful" owner="crom_resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class="busniess_card_Hover"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:11.427783" elapsed="8.199451"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:19.652228" level="INFO">Element '//*[@class="busniess_card_Hover"]' contains text 'test - pallettest'.</msg>
+<arg>//*[@class="busniess_card_Hover"]</arg>
+<arg>${last_name} - ${company_name}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T14:24:19.627234" elapsed="0.024994"/>
+</kw>
+<doc>Verifies that the lead creation was successful by checking the presence of the created lead.</doc>
+<status status="PASS" start="2024-10-16T14:24:11.426816" elapsed="8.226413"/>
+</kw>
+<kw name="Verify Lead In Leads List" owner="crom_resource">
+<kw name="Navigate To Module" owner="crom_resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:19.654237" elapsed="0.013994"/>
+</kw>
+<msg time="2024-10-16T14:24:19.668231" level="INFO">${leave_page_button} = True</msg>
+<var>${leave_page_button}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-16T14:24:19.654237" elapsed="0.013994"/>
+</kw>
+<if>
+<branch type="IF" condition="'${leave_page_button}' == 'False'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:19.668231" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:19.668231" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:19.668231" elapsed="0.000000"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:19.668231" level="INFO">Clicking element '//*[@id="Visible_Leads"]'.</msg>
+<arg>${module_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:19.668231" elapsed="0.155423"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@aria-label="Create Lead"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:19.823654" elapsed="0.778388"/>
+</kw>
+<arg>${leads_module_locator}</arg>
+<arg>${leads_module}</arg>
+<doc>This keyword navigates to the specified module in Zoho CRM and handles any leave-page confirmations.</doc>
+<status status="PASS" start="2024-10-16T14:24:19.654237" elapsed="0.948803"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:20.629041" level="INFO">Element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='test']' is displayed.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='${last_name}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:20.603040" elapsed="0.026001"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:20.656141" level="INFO">Element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='pallettest']' is displayed.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='${company_name}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:20.630076" elapsed="0.026065"/>
+</kw>
+<doc>Ensures the newly created lead is visible in the Leads module list.</doc>
+<status status="PASS" start="2024-10-16T14:24:19.653229" elapsed="1.003947"/>
+</kw>
+<kw name="Delete Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:20.657176" level="INFO">Clicking element '//*[@role="row"][1]/lyte-exptable-td/lyte-yield/lyte-checkbox'.</msg>
+<arg>//*[@role="row"][1]/lyte-exptable-td/lyte-yield/lyte-checkbox</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:20.657176" elapsed="0.119973"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="moreAct"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:20.777149" elapsed="0.251346"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:21.028495" level="INFO">Clicking element '//*[@id="moreAct"]'.</msg>
+<arg>//*[@id="moreAct"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:21.028495" elapsed="0.090546"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="actionParent"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:21.120027" elapsed="0.255258"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:21.375285" level="INFO">Clicking element '//*[@id="actionParent"]//*[contains(text(), 'Delete')]'.</msg>
+<arg>//*[@id="actionParent"]//*[contains(text(), 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:21.375285" elapsed="0.092005"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class="record_delete_button"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:21.467290" elapsed="1.821330"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:23.288620" level="INFO">Clicking element '//*[@class="record_delete_button"]'.</msg>
+<arg>//*[@class="record_delete_button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:23.288620" elapsed="0.073154"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:23.376903" level="INFO">Current page contains element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='test']'.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='${last_name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-16T14:24:23.361774" elapsed="0.015129"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:23.390903" level="INFO">Current page contains element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='pallettest']'.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='${company_name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-16T14:24:23.376903" elapsed="0.014000"/>
+</kw>
+<doc>Deletes the specified lead from the Leads module.</doc>
+<status status="PASS" start="2024-10-16T14:24:20.657176" elapsed="2.733727"/>
+</kw>
+<doc>This test verifies that a new lead can be successfully created in Zoho CRM when only the mandatory fields (last name and company) are filled.</doc>
+<status status="PASS" start="2024-10-16T14:24:00.087674" elapsed="23.304230"/>
+</test>
+<test id="s1-t2" name="Verify Lead Creation Fails without Mandatory Fields" line="21">
+<kw name="Navigate To Module" owner="crom_resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:23.395905" elapsed="0.947018"/>
+</kw>
+<msg time="2024-10-16T14:24:24.342923" level="INFO">${leave_page_button} = True</msg>
+<var>${leave_page_button}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-16T14:24:23.394908" elapsed="0.948015"/>
+</kw>
+<if>
+<branch type="IF" condition="'${leave_page_button}' == 'False'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:24.343929" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:24.343929" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:24.342923" elapsed="0.001006"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:24.344962" level="INFO">Clicking element '//*[@id="Visible_Leads"]'.</msg>
+<arg>${module_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:24.344962" elapsed="0.096526"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@aria-label="Create Lead"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:24.441488" elapsed="0.041301"/>
+</kw>
+<arg>${leads_module_locator}</arg>
+<arg>${leads_module}</arg>
+<doc>This keyword navigates to the specified module in Zoho CRM and handles any leave-page confirmations.</doc>
+<status status="PASS" start="2024-10-16T14:24:23.394908" elapsed="1.087881"/>
+</kw>
+<kw name="Click Create New Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:24.483788" level="INFO">Clicking element '//*[@aria-label="Create Lead"]'.</msg>
+<arg>//*[@aria-label="Create Lead"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:24.483788" elapsed="0.101465"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="heading_title"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:24.585253" elapsed="0.799833"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:25.418047" level="INFO">Element '//*[@id="heading_title"]' contains text 'Create Lead'.</msg>
+<arg>//*[@id="heading_title"]</arg>
+<arg>Create Lead</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.385086" elapsed="0.032961"/>
+</kw>
+<doc>Clicks the "Create Lead" button and ensures the "Create Lead" form is loaded.</doc>
+<status status="PASS" start="2024-10-16T14:24:24.482789" elapsed="0.935258"/>
+</kw>
+<kw name="Input Lead Information" owner="crom_resource">
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.420088" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.420088" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.420088" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.420088" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.420088" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.420088" elapsed="0.000959"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.421047" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.421047" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.421047" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<arg>${company}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.421047" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.421047" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.421047" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.422080" elapsed="0.026421"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:25.421047" elapsed="0.027454"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.421047" elapsed="0.027454"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:25.449500" level="INFO">Typing text 'test' into text field '//*[@id="Crm_Leads_LASTNAME_LInput"]'.</msg>
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.448501" elapsed="0.165208"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:25.448501" elapsed="0.165208"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.448501" elapsed="0.165208"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.613709" elapsed="0.000998"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.613709" elapsed="0.000998"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.613709" elapsed="0.000998"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.614707" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.614707" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.614707" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.615716" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.614707" elapsed="0.001009"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.614707" elapsed="0.001009"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.615716" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.615716" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.615716" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.616705" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.615716" elapsed="0.000989"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.615716" elapsed="0.000989"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<arg>${designation}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.616705" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.616705" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.616705" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.616705" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.616705" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.616705" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>${LEAD_SOURCE_DROPDOWN}</arg>
+<arg>${leadsource}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.617742" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.616705" elapsed="0.001037"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.616705" elapsed="0.001037"/>
+</if>
+<arg>lastname=${last_name}</arg>
+<doc>Fills in the lead information on the Create Lead form, including optional and mandatory fields.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.419082" elapsed="0.198660"/>
+</kw>
+<kw name="Save Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:25.618706" level="INFO">Clicking element '//*[@id="crm_create_savebutn"]'.</msg>
+<arg>//*[@id="crm_create_savebutn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.618706" elapsed="0.088002"/>
+</kw>
+<doc>Saves the lead by clicking the Save button on the Create Lead form.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.617742" elapsed="0.088966"/>
+</kw>
+<kw name="Verify Lead Creation Is Failed For Not Entering Mandatory Field" owner="crom_resource">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>//*[@id="errorMsg_Crm_Leads_COMPANY"]</arg>
+<arg>Company cannot be empty.</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.707708" elapsed="0.066033"/>
+</kw>
+<kw name="Input Lead Information" owner="crom_resource">
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.775712" elapsed="0.001000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.774754" elapsed="0.001958"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.774754" elapsed="0.001958"/>
+</if>
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:25.777712" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:25.776712" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.776712" elapsed="0.001000"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.778714" elapsed="0.029992"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:25.777712" elapsed="0.030994"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.777712" elapsed="0.030994"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:25.810727" level="INFO">Typing text 'pallettest' into text field '//input[@type='text' and @maxlength='200']'.</msg>
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<arg>${company}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.809713" elapsed="0.202944"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:25.808706" elapsed="0.203951"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:25.808706" elapsed="0.203951"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.013682" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.012657" elapsed="0.001025"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.012657" elapsed="0.001025"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.013682" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.013682" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.013682" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.014660" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.013682" elapsed="0.000978"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.013682" elapsed="0.000978"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.014660" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.014660" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.014660" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.014660" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.014660" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.014660" elapsed="0.001034"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.015694" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.015694" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.015694" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.015694" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.015694" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.015694" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<arg>${designation}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.016694" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.015694" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.015694" elapsed="0.001000"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.016694" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.016694" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.016694" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>${LEAD_SOURCE_DROPDOWN}</arg>
+<arg>${leadsource}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:26.016694" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:26.016694" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:26.016694" elapsed="0.000998"/>
+</if>
+<arg>company=${company_name}</arg>
+<doc>Fills in the lead information on the Create Lead form, including optional and mandatory fields.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.773741" elapsed="0.243951"/>
+</kw>
+<kw name="Save Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:26.017692" level="INFO">Clicking element '//*[@id="crm_create_savebutn"]'.</msg>
+<arg>//*[@id="crm_create_savebutn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:26.017692" elapsed="0.087156"/>
+</kw>
+<doc>Saves the lead by clicking the Save button on the Create Lead form.</doc>
+<status status="PASS" start="2024-10-16T14:24:26.017692" elapsed="0.088184"/>
+</kw>
+<kw name="Verify Lead Creation Is Successful" owner="crom_resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class="busniess_card_Hover"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:26.105876" elapsed="1.373059"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:27.505935" level="INFO">Element '//*[@class="busniess_card_Hover"]' contains text 'test - pallettest'.</msg>
+<arg>//*[@class="busniess_card_Hover"]</arg>
+<arg>${last_name} - ${company_name}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T14:24:27.478935" elapsed="0.027000"/>
+</kw>
+<doc>Verifies that the lead creation was successful by checking the presence of the created lead.</doc>
+<status status="PASS" start="2024-10-16T14:24:26.105876" elapsed="1.400059"/>
+</kw>
+<doc>Ensures that lead creation fails when mandatory fields are missing.</doc>
+<status status="PASS" start="2024-10-16T14:24:25.706708" elapsed="1.799227"/>
+</kw>
+<kw name="Navigate To Module" owner="crom_resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:27.507939" elapsed="0.013997"/>
+</kw>
+<msg time="2024-10-16T14:24:27.521936" level="INFO">${leave_page_button} = True</msg>
+<var>${leave_page_button}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-16T14:24:27.506935" elapsed="0.015001"/>
+</kw>
+<if>
+<branch type="IF" condition="'${leave_page_button}' == 'False'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:27.522938" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:27.521936" elapsed="0.001002"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:27.521936" elapsed="0.001002"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:27.522938" level="INFO">Clicking element '//*[@id="Visible_Leads"]'.</msg>
+<arg>${module_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:27.522938" elapsed="0.139006"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@aria-label="Create Lead"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:27.661944" elapsed="0.912789"/>
+</kw>
+<arg>${leads_module_locator}</arg>
+<arg>${leads_module}</arg>
+<doc>This keyword navigates to the specified module in Zoho CRM and handles any leave-page confirmations.</doc>
+<status status="PASS" start="2024-10-16T14:24:27.506935" elapsed="1.068803"/>
+</kw>
+<kw name="Delete Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:28.576737" level="INFO">Clicking element '//*[@role="row"][1]/lyte-exptable-td/lyte-yield/lyte-checkbox'.</msg>
+<arg>//*[@role="row"][1]/lyte-exptable-td/lyte-yield/lyte-checkbox</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:28.576737" elapsed="0.138996"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="moreAct"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:28.715733" elapsed="0.247530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:28.963263" level="INFO">Clicking element '//*[@id="moreAct"]'.</msg>
+<arg>//*[@id="moreAct"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:28.963263" elapsed="0.092435"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="actionParent"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.056698" elapsed="0.259001"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:29.316730" level="INFO">Clicking element '//*[@id="actionParent"]//*[contains(text(), 'Delete')]'.</msg>
+<arg>//*[@id="actionParent"]//*[contains(text(), 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.316730" elapsed="0.172482"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class="record_delete_button"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.489212" elapsed="0.376618"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:29.865830" level="INFO">Clicking element '//*[@class="record_delete_button"]'.</msg>
+<arg>//*[@class="record_delete_button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.865830" elapsed="0.078466"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:29.960458" level="INFO">Current page contains element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='test']'.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='${last_name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.944296" elapsed="0.016162"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:29.975673" level="INFO">Current page contains element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='pallettest']'.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='${company_name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.960458" elapsed="0.015215"/>
+</kw>
+<doc>Deletes the specified lead from the Leads module.</doc>
+<status status="PASS" start="2024-10-16T14:24:28.576737" elapsed="1.398936"/>
+</kw>
+<doc>This test ensures that attempting to create a lead without filling the mandatory fields results in a failure.</doc>
+<status status="PASS" start="2024-10-16T14:24:23.392908" elapsed="6.583763"/>
+</test>
+<test id="s1-t3" name="Verify Email Field Can Be Updated Using Edit Option After Lead Creation" line="31">
+<kw name="Navigate To Module" owner="crom_resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.978696" elapsed="0.546159"/>
+</kw>
+<msg time="2024-10-16T14:24:30.525365" level="INFO">${leave_page_button} = True</msg>
+<var>${leave_page_button}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.978696" elapsed="0.546669"/>
+</kw>
+<if>
+<branch type="IF" condition="'${leave_page_button}' == 'False'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:30.525463" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:30.525463" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:30.525463" elapsed="0.000000"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:30.526410" level="INFO">Clicking element '//*[@id="Visible_Leads"]'.</msg>
+<arg>${module_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:30.525463" elapsed="0.097351"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@aria-label="Create Lead"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:30.623815" elapsed="0.033773"/>
+</kw>
+<arg>${leads_module_locator}</arg>
+<arg>${leads_module}</arg>
+<doc>This keyword navigates to the specified module in Zoho CRM and handles any leave-page confirmations.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.978696" elapsed="0.678892"/>
+</kw>
+<kw name="Click Create New Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:30.658589" level="INFO">Clicking element '//*[@aria-label="Create Lead"]'.</msg>
+<arg>//*[@aria-label="Create Lead"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:30.658589" elapsed="0.095614"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="heading_title"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:30.755200" elapsed="0.823986"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:31.608719" level="INFO">Element '//*[@id="heading_title"]' contains text 'Create Lead'.</msg>
+<arg>//*[@id="heading_title"]</arg>
+<arg>Create Lead</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T14:24:31.579186" elapsed="0.030559"/>
+</kw>
+<doc>Clicks the "Create Lead" button and ensures the "Create Lead" form is loaded.</doc>
+<status status="PASS" start="2024-10-16T14:24:30.658589" elapsed="0.951156"/>
+</kw>
+<kw name="Input Lead Information" owner="crom_resource">
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:31.610749" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:31.610749" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:31.610749" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:31.611748" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:31.610749" elapsed="0.000999"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:31.610749" elapsed="0.000999"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:31.611748" elapsed="0.025840"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:31.611748" elapsed="0.025840"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:31.611748" elapsed="0.025840"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:31.638588" level="INFO">Typing text 'pallettest' into text field '//input[@type='text' and @maxlength='200']'.</msg>
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<arg>${company}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:31.637588" elapsed="0.247146"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:31.637588" elapsed="0.247146"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:31.637588" elapsed="0.247146"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:31.885738" elapsed="0.030996"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:31.884734" elapsed="0.032000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:31.884734" elapsed="0.032000"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:31.916734" level="INFO">Typing text 'test' into text field '//*[@id="Crm_Leads_LASTNAME_LInput"]'.</msg>
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:31.916734" elapsed="0.187211"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:31.916734" elapsed="0.187211"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:31.916734" elapsed="0.187211"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:32.103945" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:32.103945" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:32.103945" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:32.104918" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:32.103945" elapsed="0.000973"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:32.103945" elapsed="0.000973"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:32.104918" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:32.104918" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:32.104918" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:32.105925" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:32.104918" elapsed="0.001007"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:32.104918" elapsed="0.001007"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:32.105925" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:32.105925" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:32.105925" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<arg>${designation}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:32.106917" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:32.105925" elapsed="0.000992"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:32.105925" elapsed="0.000992"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:32.106917" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:32.106917" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:32.106917" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>${LEAD_SOURCE_DROPDOWN}</arg>
+<arg>${leadsource}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:32.107917" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:32.106917" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:32.106917" elapsed="0.001000"/>
+</if>
+<arg>lastname=${last_name}</arg>
+<arg>company=${company_name}</arg>
+<doc>Fills in the lead information on the Create Lead form, including optional and mandatory fields.</doc>
+<status status="PASS" start="2024-10-16T14:24:31.609745" elapsed="0.498172"/>
+</kw>
+<kw name="Save Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:32.108919" level="INFO">Clicking element '//*[@id="crm_create_savebutn"]'.</msg>
+<arg>//*[@id="crm_create_savebutn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:32.108919" elapsed="0.099336"/>
+</kw>
+<doc>Saves the lead by clicking the Save button on the Create Lead form.</doc>
+<status status="PASS" start="2024-10-16T14:24:32.107917" elapsed="0.100338"/>
+</kw>
+<kw name="Verify Lead Creation Is Successful" owner="crom_resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class="busniess_card_Hover"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:32.210276" elapsed="1.140172"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:33.383447" level="INFO">Element '//*[@class="busniess_card_Hover"]' contains text 'test - pallettest'.</msg>
+<arg>//*[@class="busniess_card_Hover"]</arg>
+<arg>${last_name} - ${company_name}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T14:24:33.351446" elapsed="0.032001"/>
+</kw>
+<doc>Verifies that the lead creation was successful by checking the presence of the created lead.</doc>
+<status status="PASS" start="2024-10-16T14:24:32.209261" elapsed="1.174186"/>
+</kw>
+<kw name="Verify Lead In Leads List" owner="crom_resource">
+<kw name="Navigate To Module" owner="crom_resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:33.385450" elapsed="0.029999"/>
+</kw>
+<msg time="2024-10-16T14:24:33.415449" level="INFO">${leave_page_button} = True</msg>
+<var>${leave_page_button}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-16T14:24:33.385450" elapsed="0.031000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${leave_page_button}' == 'False'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:33.416450" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:33.416450" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:33.416450" elapsed="0.000000"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:33.416450" level="INFO">Clicking element '//*[@id="Visible_Leads"]'.</msg>
+<arg>${module_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:33.416450" elapsed="0.162328"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@aria-label="Create Lead"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:33.578778" elapsed="0.701760"/>
+</kw>
+<arg>${leads_module_locator}</arg>
+<arg>${leads_module}</arg>
+<doc>This keyword navigates to the specified module in Zoho CRM and handles any leave-page confirmations.</doc>
+<status status="PASS" start="2024-10-16T14:24:33.384447" elapsed="0.896091"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:34.309574" level="INFO">Element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='test']' is displayed.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='${last_name}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:34.280538" elapsed="0.029036"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:34.339606" level="INFO">Element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='pallettest']' is displayed.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='${company_name}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:34.309574" elapsed="0.030032"/>
+</kw>
+<doc>Ensures the newly created lead is visible in the Leads module list.</doc>
+<status status="PASS" start="2024-10-16T14:24:33.384447" elapsed="0.955159"/>
+</kw>
+<kw name="Verify Lead Information Is Updated Using Edit Option" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:34.340595" level="INFO">Clicking element '//*[@role="row"][1]/lyte-exptable-td[1]'.</msg>
+<arg>//*[@role="row"][1]/lyte-exptable-td[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:34.340595" elapsed="0.172183"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="quickActionsOptionsList"]//*[@data-value="Edit"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:34.512778" elapsed="0.035996"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:34.548774" level="INFO">Clicking element '//*[@id="quickActionsOptionsList"]//*[@data-value='Edit']'.</msg>
+<arg>//*[@id="quickActionsOptionsList"]//*[@data-value='Edit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:34.548774" elapsed="0.160685"/>
+</kw>
+<kw name="Input Lead Information" owner="crom_resource">
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:34.710458" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:34.710458" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:34.710458" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${firstname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:34.710458" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:34.710458" elapsed="0.001001"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:34.710458" elapsed="0.001001"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:34.711459" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:34.711459" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:34.711459" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${company}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${COMPANY_FIELD_LOCATOR}</arg>
+<arg>${company}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:34.712459" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:34.711459" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:34.711459" elapsed="0.001000"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:34.713464" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:34.712459" elapsed="0.001005"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:34.712459" elapsed="0.001005"/>
+</if>
+<if>
+<branch type="IF" condition="'${lastname}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${LASTNAME_FIELD_LOCATOR}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:34.713464" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:34.713464" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:34.713464" elapsed="0.000996"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:34.714460" elapsed="1.313897"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:34.714460" elapsed="1.313897"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:34.714460" elapsed="1.313897"/>
+</if>
+<if>
+<branch type="IF" condition="'${email}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:36.028357" level="INFO">Typing text 'pallettest@sharklasers.com' into text field '//*[@id="Crm_Leads_EMAIL_LInput"]'.</msg>
+<arg>${EMAIL_FIELD_LOCATOR}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:36.028357" elapsed="0.346379"/>
+</kw>
+<status status="PASS" start="2024-10-16T14:24:36.028357" elapsed="0.346379"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:36.028357" elapsed="0.346379"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:36.374736" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:36.374736" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:36.374736" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${phone}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${PHONE_FIELD_LOCATOR}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:36.375736" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:36.374736" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:36.374736" elapsed="0.001000"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:36.375736" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:36.375736" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:36.375736" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${designation}' != '${None}'">
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${DESIGNATION_FIELD_LOCATOR}</arg>
+<arg>${designation}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:36.376737" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:36.375736" elapsed="0.001001"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:36.375736" elapsed="0.001001"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRSTNAME_FIELD_LOCATOR}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:36.376737" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:36.376737" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:36.376737" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'${leadsource}' != '${None}'">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>${LEAD_SOURCE_DROPDOWN}</arg>
+<arg>${leadsource}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:36.376737" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:36.376737" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:36.376737" elapsed="0.000999"/>
+</if>
+<arg>email=${email}</arg>
+<doc>Fills in the lead information on the Create Lead form, including optional and mandatory fields.</doc>
+<status status="PASS" start="2024-10-16T14:24:34.709459" elapsed="1.668277"/>
+</kw>
+<kw name="Save Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:36.377736" level="INFO">Clicking element '//*[@id="crm_create_savebutn"]'.</msg>
+<arg>//*[@id="crm_create_savebutn"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:36.377736" elapsed="0.096734"/>
+</kw>
+<doc>Saves the lead by clicking the Save button on the Create Lead form.</doc>
+<status status="PASS" start="2024-10-16T14:24:36.377736" elapsed="0.096734"/>
+</kw>
+<kw name="Verify Lead Creation Is Successful" owner="crom_resource">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class="busniess_card_Hover"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:36.475469" elapsed="1.245522"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:37.746551" level="INFO">Element '//*[@class="busniess_card_Hover"]' contains text 'test - pallettest'.</msg>
+<arg>//*[@class="busniess_card_Hover"]</arg>
+<arg>${last_name} - ${company_name}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T14:24:37.720991" elapsed="0.025560"/>
+</kw>
+<doc>Verifies that the lead creation was successful by checking the presence of the created lead.</doc>
+<status status="PASS" start="2024-10-16T14:24:36.475469" elapsed="1.271082"/>
+</kw>
+<kw name="Navigate To Module" owner="crom_resource">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:37.748576" elapsed="0.014974"/>
+</kw>
+<msg time="2024-10-16T14:24:37.763550" level="INFO">${leave_page_button} = True</msg>
+<var>${leave_page_button}</var>
+<arg>Wait Until Element Is Not Visible</arg>
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<arg>10s</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-10-16T14:24:37.748576" elapsed="0.014974"/>
+</kw>
+<if>
+<branch type="IF" condition="'${leave_page_button}' == 'False'">
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//*[@class="lyte-button lyteFailure"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-10-16T14:24:37.763550" elapsed="0.001000"/>
+</kw>
+<status status="NOT RUN" start="2024-10-16T14:24:37.763550" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2024-10-16T14:24:37.763550" elapsed="0.001000"/>
+</if>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:37.764550" level="INFO">Clicking element '//*[@id="Visible_Leads"]'.</msg>
+<arg>${module_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:37.764550" elapsed="0.137913"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@aria-label="Create Lead"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:37.903459" elapsed="1.059840"/>
+</kw>
+<arg>${leads_module_locator}</arg>
+<arg>${leads_module}</arg>
+<doc>This keyword navigates to the specified module in Zoho CRM and handles any leave-page confirmations.</doc>
+<status status="PASS" start="2024-10-16T14:24:37.747550" elapsed="1.215749"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:39.006300" level="INFO">Element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='pallettest@sharklasers.com']' is displayed.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='${email}']</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:38.963299" elapsed="0.043001"/>
+</kw>
+<doc>Verifies that the lead information can be updated using the edit option.</doc>
+<status status="PASS" start="2024-10-16T14:24:34.340595" elapsed="4.665705"/>
+</kw>
+<doc>This test confirms that the email field of an existing lead can be successfully updated using the edit option in Zoho CRM.</doc>
+<status status="PASS" start="2024-10-16T14:24:29.977672" elapsed="9.029627"/>
+</test>
+<test id="s1-t4" name="Verify Lead Deletion Is Successful" line="41">
+<kw name="Delete Lead" owner="crom_resource">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:39.010302" level="INFO">Clicking element '//*[@role="row"][1]/lyte-exptable-td/lyte-yield/lyte-checkbox'.</msg>
+<arg>//*[@role="row"][1]/lyte-exptable-td/lyte-yield/lyte-checkbox</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:39.010302" elapsed="0.183002"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="moreAct"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:39.193304" elapsed="0.258997"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:39.453301" level="INFO">Clicking element '//*[@id="moreAct"]'.</msg>
+<arg>//*[@id="moreAct"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:39.453301" elapsed="0.129001"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@id="actionParent"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:39.583317" elapsed="0.050986"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:39.634303" level="INFO">Clicking element '//*[@id="actionParent"]//*[contains(text(), 'Delete')]'.</msg>
+<arg>//*[@id="actionParent"]//*[contains(text(), 'Delete')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:39.634303" elapsed="0.208998"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//*[@class="record_delete_button"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-16T14:24:39.844331" elapsed="0.411812"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:40.257141" level="INFO">Clicking element '//*[@class="record_delete_button"]'.</msg>
+<arg>//*[@class="record_delete_button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-16T14:24:40.257141" elapsed="0.095510"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:40.371649" level="INFO">Current page contains element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='test']'.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@data-zcqa='${last_name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-16T14:24:40.353651" elapsed="0.017998"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2024-10-16T14:24:40.388661" level="INFO">Current page contains element '//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='pallettest']'.</msg>
+<arg>//*[@yield-name="contentYield"]//*[@role="row"][1]/lyte-exptable-td//*[@lt-prop-value='${company_name}']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2024-10-16T14:24:40.371649" elapsed="0.017012"/>
+</kw>
+<doc>Deletes the specified lead from the Leads module.</doc>
+<status status="PASS" start="2024-10-16T14:24:39.009301" elapsed="1.379360"/>
+</kw>
+<doc>This test ensures that a lead can be successfully deleted and that the lead no longer appears in the Leads module after deletion.</doc>
+<status status="PASS" start="2024-10-16T14:24:39.008302" elapsed="1.381349"/>
+</test>
+<doc>Hello</doc>
+<status status="PASS" start="2024-10-16T14:22:45.697808" elapsed="114.693841"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Crm Test">Crm Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-16T14:22:46.269318" level="WARN">exexcutable_path is being deprecated. Please use service to configure the driver's executable_path as per documentation.</msg>
+</errors>
+</robot>
